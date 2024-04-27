@@ -1,0 +1,8 @@
+{% macro btn(text, url, isActive, type) %}
+  {% if isActive %}
+    {% set btn_class = 'btn-' ~ (type|default('primary')) %}
+  {% else %}
+    {% set btn_class = 'btn-outline-secondary ' %}
+  {% endif %}
+  <a href="{{ url }}" class="btn {{ btn_class }}  m-1 ">{{ text }}</a>
+{% endmacro %}

@@ -1,0 +1,22 @@
+{% extends "__layout.twig" %}
+ {% block content %}
+<b> Вы в мире кино, щя расскажем  </b>
+<ul class="list-group">
+{% for item in menu_items %}
+
+<li class="list-group-item">
+<h1>{{item.title}}</h1>
+{% include 'button.twig' with {
+        label: "Картинка",
+        url: "/" ~ item.url_title ~ "/image",
+        is_active: true
+    } %}
+{% include 'button.twig' with {
+        label: "Информация",
+        url: "/" ~ item.url_title ~ "/info",
+        is_active: true
+    } %} 
+</li>
+{% endfor %}
+</ul>
+{% endblock %}
